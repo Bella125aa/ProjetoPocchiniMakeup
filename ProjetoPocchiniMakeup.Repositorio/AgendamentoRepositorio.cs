@@ -1,46 +1,56 @@
-using Domain.Entities;
-using ProjetoPocchiniMakeup.Dominio.Entidade;
-using static Domain.Entities.Agendamento;
+using System.Threading.Tasks;
+using Domain.Entidade;
+using Microsoft.EntityFrameworkCore;
+using ProjetoPocchiniMakeup.Dominio.Enumeradores;
 
-namespace DataAccess.Repositorio {
-
-public class AgendamentoRepositorio : BaseRepositorio, IAgendamentoRepositorio
+namespace DataAccess.Repositorio
 {
-    public AgendamentoRepositorio(ProjetoPocchiniMakeupContexto contexto) : base(contexto)
-    {
-    }
 
-    public int Salvar(Agendamento agendamento)
+    public class AgendamentoRepositorio : BaseRepositorio, IAgendamentoRepositorio
     {
-        _contexto.Agendamento.Add(agendamento);
-        _contexto.SaveChanges();
+        public AgendamentoRepositorio(ProjetoPocchiniMakeupContexto contexto) : base(contexto)
+        {
+        }
 
-        return agendamento.Id;
-    }
+        public async Task<int> SalvarAsync(Agendamento agendamento)
+        {
+            await _contexto.Agendamento.AddAsync(agendamento);
+            await _contexto.SaveChangesAsync();
 
-    public void Atualizar(Agendamento agendamento)
-    {
-        _contexto.Agendamento.Update(agendamento);
-        _contexto.SaveChanges();
-    }
+            return agendamento.Id;
+        }
 
-    public Agendamento Obter(int agendamentoId)
-    {
-        return _contexto.Agendamento
-        .Where(u => u.Id == agendamentoId)
-        .FirstOrDefault();
-    }
+        public async Task AtualizarAsync(Agendamento agendamento)
+        {
 
-    public Agendamento ObterPorEmail(string email)
-    {
-        return _contexto.Agendamento
-        .Where(u => u.Email == email)
-        .FirstOrDefault();
-    }
+            _contexto.Agendamento.Update(agendamento);
+            await _contexto.SaveChangesAsync();
+        }
 
-    public IEnumerable<Agendamento> Listar(StatusAgendamento status)
-    {
-        return _contexto.Agendamento.Where(u => u.Status == status).ToList();
+        public async Task<Agendamento> ObterAsync(int agendamentoId)
+        {
+            return await _contexto.Agendamento
+            .Where(u => u.Id == agendamentoId)
+            .FirstOrDefaultAsync();
+        }
+
+        public async Task<Agendamento> ObterPorEmailAsync(string email)
+        {
+            return await _contexto.Agendamento
+            .Where(u => u.Email == email)
+            .FirstOrDefaultAsync();
+        }
+
+        public async Task<List<Agendamento>> ObterAgendamentosPorDataAsync(DateTime data)
+        {
+            return await _contexto.Agendamento
+            .Where(a => a.DataHora.Date == data.Date)
+            .ToListAsync();
+        }
+
+        public async Task<IEnumerable<Agendamento>> ListarAsync(StatusAgendamento status)
+        {
+            return await _contexto.Agendamento.Where(u => u.Status == status).ToListAsync();
+        }
     }
- }
 }

@@ -1,6 +1,6 @@
 using ProjetoPocchiniMakeup.Dominio.Enumeradores;
 
-namespace Domain.Entities
+namespace Domain.Entidade
 {
     public class Agendamento
     {
@@ -13,13 +13,6 @@ namespace Domain.Entities
         public string Local { get; set; } = string.Empty;
         public string Observacoes { get; set; } = string.Empty;
         public StatusAgendamento Status { get; set; } = StatusAgendamento.Pendente;
-
-        public enum StatusAgendamento
-        {
-            Cancelado,
-            Confirmado,
-            Pendente
-        }
 
     }
 

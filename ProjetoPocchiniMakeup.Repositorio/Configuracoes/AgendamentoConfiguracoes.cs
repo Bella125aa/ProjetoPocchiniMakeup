@@ -1,4 +1,5 @@
-using Domain.Entities;
+using Domain.Entidade;
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using ProjetoPocchiniMakeup.Dominio.Entidade;
