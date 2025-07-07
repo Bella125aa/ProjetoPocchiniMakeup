@@ -1,0 +1,11 @@
+C:\Users\Tarde\Desktop\ProjConclusao\ProjetoAPI\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Dominio\bin\Debug\net8.0\ProjetoPocchiniMakeup.Dominio.deps.json
+C:\Users\Tarde\Desktop\ProjConclusao\ProjetoAPI\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Dominio\bin\Debug\net8.0\ProjetoPocchiniMakeup.Dominio.dll
+C:\Users\Tarde\Desktop\ProjConclusao\ProjetoAPI\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Dominio\bin\Debug\net8.0\ProjetoPocchiniMakeup.Dominio.pdb
+C:\Users\Tarde\Desktop\ProjConclusao\ProjetoAPI\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Dominio\obj\Debug\net8.0\ProjetoPocchiniMakeup.Dominio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tarde\Desktop\ProjConclusao\ProjetoAPI\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Dominio\obj\Debug\net8.0\ProjetoPocchiniMakeup.Dominio.AssemblyInfoInputs.cache
+C:\Users\Tarde\Desktop\ProjConclusao\ProjetoAPI\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Dominio\obj\Debug\net8.0\ProjetoPocchiniMakeup.Dominio.AssemblyInfo.cs
+C:\Users\Tarde\Desktop\ProjConclusao\ProjetoAPI\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Dominio\obj\Debug\net8.0\ProjetoPocchiniMakeup.Dominio.csproj.CoreCompileInputs.cache
+C:\Users\Tarde\Desktop\ProjConclusao\ProjetoAPI\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Dominio\obj\Debug\net8.0\ProjetoPocchiniMakeup.Dominio.dll
+C:\Users\Tarde\Desktop\ProjConclusao\ProjetoAPI\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Dominio\obj\Debug\net8.0\refint\ProjetoPocchiniMakeup.Dominio.dll
+C:\Users\Tarde\Desktop\ProjConclusao\ProjetoAPI\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Dominio\obj\Debug\net8.0\ProjetoPocchiniMakeup.Dominio.pdb
+C:\Users\Tarde\Desktop\ProjConclusao\ProjetoAPI\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Dominio\obj\Debug\net8.0\ref\ProjetoPocchiniMakeup.Dominio.dll
