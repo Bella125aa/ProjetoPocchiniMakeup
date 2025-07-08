@@ -14,7 +14,7 @@ namespace ProjetoPocchiniMakeup.Aplicacao
             _usuarioRepositorio = usuarioRepositorio;
         }
 
-        public int Criar(Usuario usuario)
+        public async Task<int> CriarAsync(Usuario usuario)
         {
             if (usuario == null)
                 throw new Exception("Usuario não pode ser vazio");
@@ -24,13 +24,12 @@ namespace ProjetoPocchiniMakeup.Aplicacao
 
             ValidarInformacoesUsuario(usuario);
 
-            return _usuarioRepositorio.Salvar(usuario);
+            return await _usuarioRepositorio.SalvarAsync(usuario);
         }
 
-
-        public void Atualizar(Usuario usuario)
+        public async Task AtualizarAsync(Usuario usuario)
         {
-            var usuarioDominio = _usuarioRepositorio.Obter(usuario.ID);
+            var usuarioDominio = await _usuarioRepositorio.ObterAsync(usuario.ID);
 
             if (usuarioDominio == null)
                 throw new Exception("Usuario não encontrado");
@@ -38,15 +37,16 @@ namespace ProjetoPocchiniMakeup.Aplicacao
             ValidarInformacoesUsuario(usuario);
 
             usuarioDominio.Nome = usuario.Nome;
-            usuarioDominio.Email = usuario.Email;
+            usuarioDominio.Email = usuario.Email; 
 
-            _usuarioRepositorio.Atualizar(usuarioDominio);
+            await _usuarioRepositorio.AtualizarAsync(usuarioDominio); 
         }
 
-        public void AlterarSenha(Usuario usuario, string senhaAntiga)
+
+        public async Task AlterarSenhaAsync(Usuario usuario, string senhaAntiga)
 
         {
-            var usuarioDominio = _usuarioRepositorio.Obter(usuario.ID);
+            var usuarioDominio = await _usuarioRepositorio.ObterAsync(usuario.ID);
 
             if (usuarioDominio == null)
                 throw new Exception("Usuario não encontrado");
@@ -56,12 +56,12 @@ namespace ProjetoPocchiniMakeup.Aplicacao
 
             usuarioDominio.Senha = usuario.Senha;
 
-            _usuarioRepositorio.Atualizar(usuarioDominio);
+           await _usuarioRepositorio.AtualizarAsync(usuarioDominio);
         }
 
-        public Usuario Obter(int usuarioId)
+        public async Task <Usuario> ObterAsync(int usuarioId)
         {
-            var usuarioDominio = _usuarioRepositorio.Obter(usuarioId);
+            var usuarioDominio = await _usuarioRepositorio.ObterAsync(usuarioId);
 
             if (usuarioDominio == null)
                 throw new Exception("Usuario não encontrado");
@@ -69,9 +69,9 @@ namespace ProjetoPocchiniMakeup.Aplicacao
             return usuarioDominio;
         }
 
-        public Usuario ObterPorEmail(string email)
+        public async Task<Usuario> ObterPorEmailAsync(string email)
         {
-            var usuarioDominio = _usuarioRepositorio.ObterPorEmail(email);
+            var usuarioDominio = await _usuarioRepositorio.ObterPorEmailAsync(email);
 
             if (usuarioDominio == null)
                 throw new Exception("Usuário não encontrado");
@@ -79,33 +79,33 @@ namespace ProjetoPocchiniMakeup.Aplicacao
             return usuarioDominio;
         }
 
-        public void Deletar(int usuarioId)
+        public async Task DeletarAsync(int usuarioId)
         {
-            var usuarioDominio = _usuarioRepositorio.Obter(usuarioId);
+            var usuarioDominio = await _usuarioRepositorio.ObterAsync(usuarioId);
 
             if (usuarioDominio == null)
                 throw new Exception("Usuário não encontrado");
 
             usuarioDominio.Deletar();
 
-            _usuarioRepositorio.Atualizar(usuarioDominio);
+           await _usuarioRepositorio.AtualizarAsync(usuarioDominio);
         }
 
-        public void Restaurar(int usuarioId)
+        public async Task RestaurarAsync(int usuarioId)
         {
-            var usuarioDominio = _usuarioRepositorio.Obter(usuarioId);
+            var usuarioDominio = await _usuarioRepositorio.ObterAsync(usuarioId);
 
             if (usuarioDominio == null)
                 throw new Exception("Usuario não encontrado");
 
             usuarioDominio.Restaurar();
 
-            _usuarioRepositorio.Atualizar(usuarioDominio);
+            await _usuarioRepositorio.AtualizarAsync(usuarioDominio);
         }
 
-        public IEnumerable<Usuario> Listar(bool ativo)
+        public async Task <IEnumerable<Usuario>> ListarAsync(bool ativo)
         {
-            return _usuarioRepositorio.Listar(ativo);
+            return await _usuarioRepositorio.Listar(ativo);
         }
 
 

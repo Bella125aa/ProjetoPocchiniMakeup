@@ -4,13 +4,13 @@ namespace ProjetoPocchiniMakeup.Aplicacao
 {
     public interface IUsuarioAplicacao
     {
-        int Criar(Usuario usuarioDTO);
-        void AlterarSenha(Usuario usuarioDTO, string novaSenha);
-        void Atualizar(Usuario usuarioDTO);
-        void Deletar(int usuarioId);
-        void Restaurar(int usuarioId);
-        IEnumerable<Usuario> Listar(bool ativo);
-        Usuario Obter(int usuarioId);
-        Usuario ObterPorEmail(string email);
+        Task<int> CriarAsync(Usuario usuarioDTO);
+        Task AlterarSenhaAsync(Usuario usuarioDTO, string novaSenha);
+        Task AtualizarAsync(Usuario usuarioDTO);
+        Task DeletarAsync(int usuarioId);
+        Task RestaurarAsync(int usuarioId);
+        Task <IEnumerable<Usuario>> ListarAsync(bool ativo);
+        Task<Usuario> ObterAsync(int usuarioId);
+        Task<Usuario> ObterPorEmailAsync(string email);
     }
 }

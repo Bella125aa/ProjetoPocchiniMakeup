@@ -12,7 +12,7 @@ namespace Domain.Entidade
         public DateTime DataHora { get; set; }
         public string Local { get; set; } = string.Empty;
         public string Observacoes { get; set; } = string.Empty;
-        public StatusAgendamento Status { get; set; } = StatusAgendamento.Pendente;
+        public StatusAgendamento Status { get; set; } = StatusAgendamento.Marcado;
 
     }
 

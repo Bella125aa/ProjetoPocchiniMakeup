@@ -1,46 +1,48 @@
+using Microsoft.EntityFrameworkCore;
 using ProjetoPocchiniMakeup.Dominio.Entidade;
 
-namespace DataAccess.Repositorio {
-
-public class UsuarioRepositorio : BaseRepositorio, IUsuarioRepositorio
+namespace DataAccess.Repositorio
 {
-    public UsuarioRepositorio(ProjetoPocchiniMakeupContexto contexto) : base(contexto)
-    {
-    }
 
-    public int Salvar(Usuario usuario)
+    public class UsuarioRepositorio : BaseRepositorio, IUsuarioRepositorio
     {
-        _contexto.Usuarios.Add(usuario);
-        _contexto.SaveChanges();
+        public UsuarioRepositorio(ProjetoPocchiniMakeupContexto contexto) : base(contexto)
+        {
+        }
 
-        return usuario.ID;
-    }
+        public async Task<int> SalvarAsync(Usuario usuario)
+        {
+            await _contexto.Usuarios.AddAsync(usuario);
+            _contexto.SaveChanges();
 
-    public void Atualizar(Usuario usuario)
-    {
-        _contexto.Usuarios.Update(usuario);
-        _contexto.SaveChanges();
-    }
+            return usuario.ID;
+        }
 
-    public Usuario Obter(int usuarioId)
-    {
-        return _contexto.Usuarios
-        .Where(u => u.ID == usuarioId)
-        .Where(u => u.Ativo)
-        .FirstOrDefault();
-    }
+        public async Task AtualizarAsync(Usuario usuario)
+        {
+            _contexto.Usuarios.Update(usuario);
+            await _contexto.SaveChangesAsync();
+        }
 
-    public Usuario ObterPorEmail(string email)
-    {
-        return _contexto.Usuarios
-        .Where(u => u.Email == email)
-        .Where(u => u.Ativo)
-        .FirstOrDefault();
-    }
+        public async Task<Usuario> ObterAsync(int usuarioId)
+        {
+            return await _contexto.Usuarios
+            .Where(u => u.ID == usuarioId)
+            .Where(u => u.Ativo)
+            .FirstOrDefaultAsync();
+        }
 
-    public IEnumerable<Usuario> Listar(bool ativo)
-    {
-        return _contexto.Usuarios.Where(u => u.Ativo == ativo).ToList();
+        public async Task<Usuario> ObterPorEmailAsync(string email)
+        {
+            return await _contexto.Usuarios
+            .Where(u => u.Email == email)
+            .Where(u => u.Ativo)
+            .FirstOrDefaultAsync();
+        }
+
+        public async Task<IEnumerable<Usuario>> Listar(bool ativo)
+        {
+            return await _contexto.Usuarios.Where(u => u.Ativo == ativo).ToListAsync();
+        }
     }
- }
 }

@@ -2,9 +2,9 @@ using ProjetoPocchiniMakeup.Dominio.Entidade;
 
 public interface IUsuarioRepositorio
 {
-    int Salvar(Usuario usuario);
-    void Atualizar(Usuario usuario);
-    Usuario Obter(int usuarioId);
-    Usuario ObterPorEmail(string email);
-    IEnumerable<Usuario> Listar(bool ativo);
+    Task<int> SalvarAsync(Usuario usuario);
+    Task AtualizarAsync(Usuario usuario);
+    Task<Usuario> ObterAsync(int usuarioId);
+    Task<Usuario> ObterPorEmailAsync(string email);
+    Task<IEnumerable<Usuario>> Listar(bool ativo);
 }
