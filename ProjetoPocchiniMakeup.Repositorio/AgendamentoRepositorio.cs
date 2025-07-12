@@ -50,7 +50,12 @@ namespace DataAccess.Repositorio
 
         public async Task<IEnumerable<Agendamento>> ListarAsync(StatusAgendamento status)
         {
-            return await _contexto.Agendamento.Where(u => u.Status == status).ToListAsync();
+            return await _contexto.Agendamento.Where(a => a.Status == status).ToListAsync();
+        }
+
+        public async Task<IEnumerable<Agendamento>> ListarAsync()
+        {
+            return await _contexto.Agendamento.Where(a => a.Status == StatusAgendamento.Marcado).ToListAsync();
         }
     }
 }

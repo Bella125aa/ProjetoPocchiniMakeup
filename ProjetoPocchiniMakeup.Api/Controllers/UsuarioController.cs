@@ -3,6 +3,7 @@ using ProjetoPocchiniMakeup.Dominio.Entidade;
 using ProjetoPocchiniMakeup.Api.Models.Requisicao;
 using ProjetoPocchiniMakeup.Api.Models.Resposta;
 using ProjetoPocchiniMakeup.Aplicacao;
+using System.Threading.Tasks;
 
 namespace ProjetoPocchiniMakeup.Api
 {
@@ -21,15 +22,15 @@ namespace ProjetoPocchiniMakeup.Api
 
         [HttpGet]
         [Route("Obter/{usuarioId}")]
-        public ActionResult Obter([FromRoute] int usuarioId)
+        public async Task<ActionResult> Obter([FromRoute] int usuarioId)
         {
             try
             {
-                var usuarioDominio = _usuarioAplicacao.Obter(usuarioId);
+                var usuarioDominio = await _usuarioAplicacao.ObterAsync(usuarioId);
 
                 var UsuarioResposta = new UsuarioResposta()
                 {
-                    Id = usuarioDominio.ID,
+                    Id = usuarioDominio.UsuarioId,
                     Nome = usuarioDominio.Nome,
                     Email = usuarioDominio.Email,
                 };
@@ -55,10 +56,10 @@ namespace ProjetoPocchiniMakeup.Api
                     Senha = usuarioCriar.Senha
                 };
 
-                var usuarioID = _usuarioAplicacao.Criar(usuarioDominio);
+                var usuarioID = _usuarioAplicacao.CriarAsync(usuarioDominio);
 
 
-                return Ok();
+                return Ok(usuarioID);
 
             }
             catch (Exception ex)
@@ -71,19 +72,18 @@ namespace ProjetoPocchiniMakeup.Api
 
         [HttpPut]
         [Route("Atualizar")]
-        public ActionResult Atualizar([FromBody] UsuarioAtualizar usuario)
+        public async Task<ActionResult> AtualizarAsync([FromBody] UsuarioAtualizar usuario)
         {
             try
             {
                 var usuarioDominio = new Usuario()
                 {
-                    ID = usuario.ID,
+                    UsuarioId = usuario.UsuarioId,
                     Nome = usuario.Nome,
                     Email = usuario.Email
                 };
 
-                _usuarioAplicacao.Atualizar(usuarioDominio);
-
+               await _usuarioAplicacao.AtualizarAsync(usuarioDominio);
                 return Ok();
             }
             catch (Exception ex)
@@ -101,11 +101,11 @@ namespace ProjetoPocchiniMakeup.Api
             {
                 var usuarioDominio = new Usuario()
                 {
-                    ID = usuario.ID,
+                    UsuarioId = usuario.ID,
                     Senha = usuario.Senha
                 };
 
-                _usuarioAplicacao.AlterarSenha(usuarioDominio, usuario.SenhaAntiga);
+                _usuarioAplicacao.AlterarSenhaAsync(usuarioDominio, usuario.SenhaAntiga);
 
                 return Ok();
             }
@@ -121,7 +121,7 @@ namespace ProjetoPocchiniMakeup.Api
         {
             try
             {
-                _usuarioAplicacao.Deletar(usuarioId);
+                _usuarioAplicacao.DeletarAsync(usuarioId);
 
                 return Ok();
             }
@@ -136,7 +136,7 @@ namespace ProjetoPocchiniMakeup.Api
         {
             try
             {
-                _usuarioAplicacao.Restaurar(usuarioId);
+                _usuarioAplicacao.RestaurarAsync(usuarioId);
 
                 return Ok();
             }
@@ -148,15 +148,15 @@ namespace ProjetoPocchiniMakeup.Api
 
         [HttpGet]
         [Route("Listar")]
-        public ActionResult Listar([FromQuery] bool ativos)
+        public async Task<ActionResult> Listar([FromQuery] bool ativos)
         {
             try
             {
-                var usuariosDominio = _usuarioAplicacao.Listar(ativos);
+                var usuariosDominio = await _usuarioAplicacao.ListarAsync(ativos);
 
                 var usuarios = usuariosDominio.Select(usuario => new UsuarioResposta()
                 {
-                    Id = usuario.ID,
+                    Id = usuario.UsuarioId,
                     Nome = usuario.Nome,
                     Email = usuario.Email
                 }).ToList();

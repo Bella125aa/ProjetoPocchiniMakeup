@@ -8,5 +8,6 @@ public interface IAgendamentoRepositorio
     Task<Agendamento> ObterAsync(int agendamentoId);
     Task<List<Agendamento>> ObterAgendamentosPorDataAsync(DateTime data);
     Task<IEnumerable<Agendamento>> ListarAsync(StatusAgendamento ativo);
+    Task<IEnumerable<Agendamento>> ListarAsync();
 }
 

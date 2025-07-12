@@ -46,7 +46,12 @@ namespace ProjetoPocchiniMakeup.Aplicacao
             if (agendamentoDominio == null)
                 throw new Exception("Agendamento não encontrado");
 
-            await _agendamentoRepositorio.AtualizarAsync(agendamento);
+            if (agendamentoDominio.Status != agendamento.Status && agendamento.Status != 0)
+            {
+                agendamentoDominio.Status = agendamento.Status;
+            }
+
+            await _agendamentoRepositorio.AtualizarAsync(agendamentoDominio);
         }
 
         public async Task<Agendamento> ObterAsync(int agendamentoId)
@@ -62,6 +67,11 @@ namespace ProjetoPocchiniMakeup.Aplicacao
         public async Task<IEnumerable<Agendamento>> ListarAsync(StatusAgendamento status)
         {
             return await _agendamentoRepositorio.ListarAsync(status);
+        }
+
+        public async Task<IEnumerable<Agendamento>> ListarAsync()
+        {
+            return await _agendamentoRepositorio.ListarAsync();
         }
 
     }

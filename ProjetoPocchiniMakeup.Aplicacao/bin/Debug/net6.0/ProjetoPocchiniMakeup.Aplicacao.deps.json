@@ -15,6 +15,12 @@
           "ProjetoPocchiniMakeup.Aplicacao.dll": {}
         }
       },
+      "Microsoft.Data.Sqlite/6.0.0": {
+        "dependencies": {
+          "Microsoft.Data.Sqlite.Core": "6.0.0",
+          "SQLitePCLRaw.bundle_e_sqlite3": "2.0.6"
+        }
+      },
       "Microsoft.Data.Sqlite.Core/6.0.0": {
         "dependencies": {
           "SQLitePCLRaw.core": "2.0.6"
@@ -346,6 +352,7 @@
       },
       "ProjetoPocchiniMakeup.Repositorio/1.0.0": {
         "dependencies": {
+          "Microsoft.Data.Sqlite": "6.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.0",
           "Microsoft.EntityFrameworkCore.Sqlite": "6.0.0",
           "ProjetoPocchiniMakeup.Dominio": "1.0.0"
@@ -361,6 +368,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Microsoft.Data.Sqlite/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yhEhY1Vxf1EC7+l0s0fnfsePqXOhErDkwtT7YKeegrbdBmFTvljL1OZw8pgKpf1/ow+/NEZt5W2Lt0XHLsbEtg==",
+      "path": "microsoft.data.sqlite/6.0.0",
+      "hashPath": "microsoft.data.sqlite.6.0.0.nupkg.sha512"
     },
     "Microsoft.Data.Sqlite.Core/6.0.0": {
       "type": "package",

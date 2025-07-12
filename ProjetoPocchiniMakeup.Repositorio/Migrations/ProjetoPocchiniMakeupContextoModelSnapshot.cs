@@ -16,7 +16,7 @@ namespace ProjetoPocchiniMakeup.Repositorio.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.0");
 
-            modelBuilder.Entity("Domain.Entities.Agendamento", b =>
+            modelBuilder.Entity("Domain.Entidade.Agendamento", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -68,7 +68,7 @@ namespace ProjetoPocchiniMakeup.Repositorio.Migrations
 
             modelBuilder.Entity("ProjetoPocchiniMakeup.Dominio.Entidade.Usuario", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("UsuarioId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER")
                         .HasColumnName("UsuarioId");
@@ -95,7 +95,7 @@ namespace ProjetoPocchiniMakeup.Repositorio.Migrations
                     b.Property<int>("TipoUsuario")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("ID");
+                    b.HasKey("UsuarioId");
 
                     b.ToTable("Usuario", (string)null);
                 });

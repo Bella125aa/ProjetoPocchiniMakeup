@@ -29,24 +29,31 @@ namespace ProjetoPocchiniMakeup.Aplicacao
 
         public async Task AtualizarAsync(Usuario usuario)
         {
-            var usuarioDominio = await _usuarioRepositorio.ObterAsync(usuario.ID);
+            var usuarioDominio = await _usuarioRepositorio.ObterAsync(usuario.UsuarioId, true);
 
             if (usuarioDominio == null)
                 throw new Exception("Usuario não encontrado");
 
             ValidarInformacoesUsuario(usuario);
 
-            usuarioDominio.Nome = usuario.Nome;
-            usuarioDominio.Email = usuario.Email; 
+            if (usuarioDominio.Email != usuario.Email && usuario.Email != "string")
+            {
+                usuarioDominio.Email = usuario.Email;
+            }          
 
-            await _usuarioRepositorio.AtualizarAsync(usuarioDominio); 
+            if (usuarioDominio.Nome != usuario.Nome && usuario.Nome != "string")
+            {
+                usuarioDominio.Nome = usuario.Nome;
+            }            
+            
+            await _usuarioRepositorio.AtualizarAsync(usuarioDominio);
         }
 
 
         public async Task AlterarSenhaAsync(Usuario usuario, string senhaAntiga)
 
         {
-            var usuarioDominio = await _usuarioRepositorio.ObterAsync(usuario.ID);
+            var usuarioDominio = await _usuarioRepositorio.ObterAsync(usuario.UsuarioId, true);
 
             if (usuarioDominio == null)
                 throw new Exception("Usuario não encontrado");
@@ -56,12 +63,12 @@ namespace ProjetoPocchiniMakeup.Aplicacao
 
             usuarioDominio.Senha = usuario.Senha;
 
-           await _usuarioRepositorio.AtualizarAsync(usuarioDominio);
+            await _usuarioRepositorio.AtualizarAsync(usuarioDominio);
         }
 
-        public async Task <Usuario> ObterAsync(int usuarioId)
+        public async Task<Usuario> ObterAsync(int usuarioId)
         {
-            var usuarioDominio = await _usuarioRepositorio.ObterAsync(usuarioId);
+            var usuarioDominio = await _usuarioRepositorio.ObterAsync(usuarioId, true);
 
             if (usuarioDominio == null)
                 throw new Exception("Usuario não encontrado");
@@ -81,19 +88,19 @@ namespace ProjetoPocchiniMakeup.Aplicacao
 
         public async Task DeletarAsync(int usuarioId)
         {
-            var usuarioDominio = await _usuarioRepositorio.ObterAsync(usuarioId);
+            var usuarioDominio = await _usuarioRepositorio.ObterAsync(usuarioId, true);
 
             if (usuarioDominio == null)
                 throw new Exception("Usuário não encontrado");
 
             usuarioDominio.Deletar();
 
-           await _usuarioRepositorio.AtualizarAsync(usuarioDominio);
+            await _usuarioRepositorio.AtualizarAsync(usuarioDominio);
         }
 
         public async Task RestaurarAsync(int usuarioId)
         {
-            var usuarioDominio = await _usuarioRepositorio.ObterAsync(usuarioId);
+            var usuarioDominio = await _usuarioRepositorio.ObterAsync(usuarioId, false);
 
             if (usuarioDominio == null)
                 throw new Exception("Usuario não encontrado");
@@ -103,7 +110,7 @@ namespace ProjetoPocchiniMakeup.Aplicacao
             await _usuarioRepositorio.AtualizarAsync(usuarioDominio);
         }
 
-        public async Task <IEnumerable<Usuario>> ListarAsync(bool ativo)
+        public async Task<IEnumerable<Usuario>> ListarAsync(bool ativo)
         {
             return await _usuarioRepositorio.Listar(ativo);
         }

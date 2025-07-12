@@ -15,7 +15,7 @@ namespace DataAccess.Repositorio
             await _contexto.Usuarios.AddAsync(usuario);
             _contexto.SaveChanges();
 
-            return usuario.ID;
+            return usuario.UsuarioId;
         }
 
         public async Task AtualizarAsync(Usuario usuario)
@@ -24,11 +24,11 @@ namespace DataAccess.Repositorio
             await _contexto.SaveChangesAsync();
         }
 
-        public async Task<Usuario> ObterAsync(int usuarioId)
+        public async Task<Usuario> ObterAsync(int usuarioId, bool ativo)
         {
             return await _contexto.Usuarios
-            .Where(u => u.ID == usuarioId)
-            .Where(u => u.Ativo)
+            .Where(u => u.UsuarioId == usuarioId)
+            .Where(u => u.Ativo == ativo)
             .FirstOrDefaultAsync();
         }
 
@@ -43,6 +43,6 @@ namespace DataAccess.Repositorio
         public async Task<IEnumerable<Usuario>> Listar(bool ativo)
         {
             return await _contexto.Usuarios.Where(u => u.Ativo == ativo).ToListAsync();
-        }
+        }      
     }
 }
