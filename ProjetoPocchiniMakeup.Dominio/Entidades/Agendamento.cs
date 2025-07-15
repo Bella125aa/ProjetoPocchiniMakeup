@@ -11,7 +11,7 @@ namespace Domain.Entidade
         public string TipoMaquiagem { get; set; } = string.Empty;
         public DateTime DataHora { get; set; }
         public string Local { get; set; } = string.Empty;
-        public string Observacoes { get; set; } = string.Empty;
+
         public StatusAgendamento Status { get; set; }
 
         public Agendamento()

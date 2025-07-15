@@ -9,9 +9,9 @@ C:\Users\Tarde\Desktop\ProjConclusao\ProjetoAPI\ProjetoPocchiniMakeup\ProjetoPoc
 C:\Users\Tarde\Desktop\ProjConclusao\ProjetoAPI\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Repositorio\obj\Debug\net6.0\ProjetoPocchiniMakeup.Repositorio.AssemblyInfoInputs.cache
 C:\Users\Tarde\Desktop\ProjConclusao\ProjetoAPI\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Repositorio\obj\Debug\net6.0\ProjetoPocchiniMakeup.Repositorio.AssemblyInfo.cs
 C:\Users\Tarde\Desktop\ProjConclusao\ProjetoAPI\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Repositorio\obj\Debug\net6.0\ProjetoPocchiniMakeup.Repositorio.csproj.CoreCompileInputs.cache
+C:\Users\Tarde\Desktop\ProjConclusao\ProjetoAPI\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Repositorio\obj\Debug\net6.0\ProjetoPocchiniMakeup.Repositorio.csproj.CopyComplete
 C:\Users\Tarde\Desktop\ProjConclusao\ProjetoAPI\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Repositorio\obj\Debug\net6.0\ProjetoPocchiniMakeup.Repositorio.dll
 C:\Users\Tarde\Desktop\ProjConclusao\ProjetoAPI\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Repositorio\obj\Debug\net6.0\refint\ProjetoPocchiniMakeup.Repositorio.dll
 C:\Users\Tarde\Desktop\ProjConclusao\ProjetoAPI\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Repositorio\obj\Debug\net6.0\ProjetoPocchiniMakeup.Repositorio.pdb
 C:\Users\Tarde\Desktop\ProjConclusao\ProjetoAPI\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Repositorio\obj\Debug\net6.0\ProjetoPocchiniMakeup.Repositorio.genruntimeconfig.cache
 C:\Users\Tarde\Desktop\ProjConclusao\ProjetoAPI\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Repositorio\obj\Debug\net6.0\ref\ProjetoPocchiniMakeup.Repositorio.dll
-C:\Users\Tarde\Desktop\ProjConclusao\ProjetoAPI\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Repositorio\obj\Debug\net6.0\ProjetoPocchiniMakeup.Repositorio.csproj.CopyComplete

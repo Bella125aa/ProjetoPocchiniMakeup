@@ -2,10 +2,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ProjetoPocchiniMakeup.Dominio\ProjetoPocchiniMakeup.Dominio.csproj" />
+    <ProjectReference Include="..\ProjetoPocchiniMakeup.Aplicacao\ProjetoPocchiniMakeup.Aplicacao.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="OpenAi" Version="2.1.0" />
   </ItemGroup>
 
   <PropertyGroup>

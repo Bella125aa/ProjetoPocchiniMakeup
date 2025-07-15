@@ -14,10 +14,11 @@ namespace DataAccess.Repositorio
 
         public async Task<int> SalvarAsync(Agendamento agendamento)
         {
-            await _contexto.Agendamento.AddAsync(agendamento);
-            await _contexto.SaveChangesAsync();
 
-            return agendamento.Id;
+                await _contexto.Agendamento.AddAsync(agendamento);
+                await _contexto.SaveChangesAsync();
+
+                return agendamento.Id;
         }
 
         public async Task AtualizarAsync(Agendamento agendamento)

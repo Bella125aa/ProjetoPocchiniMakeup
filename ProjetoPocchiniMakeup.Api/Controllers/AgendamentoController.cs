@@ -37,7 +37,6 @@ namespace ProjetoPocchiniMakeup.Api
                     DataHora = agendamentoDominio.DataHora,
                     Nome = agendamentoDominio.Nome,
                     Status = agendamentoDominio.Status.ToString(),
-                    Observacao = agendamentoDominio.Observacoes
                 };
                 return Ok(agendamentoResposta);
             }
@@ -58,7 +57,6 @@ namespace ProjetoPocchiniMakeup.Api
                     DataHora = agendamentoCriar.DataHora,
                     Nome = agendamentoCriar.Nome,
                     Email = agendamentoCriar.Email,
-                    Observacoes = agendamentoCriar.Observacao,
                     Telefone = agendamentoCriar.Telefone,
                     TipoMaquiagem = agendamentoCriar.TipoMaquiagem,
                     Local = agendamentoCriar.Local,
@@ -95,7 +93,7 @@ namespace ProjetoPocchiniMakeup.Api
                     Local = agendamento.Local,
                     Telefone = agendamento.Telefone,
                     Email = agendamento.Email,
-                    Observacao = agendamento.Observacoes
+
                 });
 
                 return Ok(agendamentos);
@@ -124,7 +122,6 @@ namespace ProjetoPocchiniMakeup.Api
                     Local = agendamento.Local,
                     Telefone = agendamento.Telefone,
                     Email = agendamento.Email,
-                    Observacao = agendamento.Observacoes
                 });
 
                 return Ok(agendamentos);

@@ -2,8 +2,8 @@ using ProjetoPocchiniMakeup.Dominio.Entidade;
 
 namespace ProjetoPocchiniMakeup.Servicos.Interfaces
 {
-    public interface IJsonPlaceHolderServico
+    public interface IAiService
     {
-        Task<List<servicoNoiva>> ListarServicos();
+        Task<string> GetAiResponseAsync(string prompt);
     }
 }

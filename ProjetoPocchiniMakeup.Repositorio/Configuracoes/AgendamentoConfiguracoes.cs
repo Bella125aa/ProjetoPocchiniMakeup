@@ -19,7 +19,6 @@ namespace ProjetoPocchiniMakeup.Repositorio.Configuracoes
             builder.Property(nameof(Agendamento.TipoMaquiagem)).HasColumnName("TipoMaquiagem").IsRequired(true);
             builder.Property(nameof(Agendamento.DataHora)).HasColumnName("DataHora").IsRequired(true);
             builder.Property(nameof(Agendamento.Local)).HasColumnName("Local").IsRequired(true);
-            builder.Property(nameof(Agendamento.Observacoes)).HasColumnName("Observacoes").IsRequired(true);
             builder.Property(nameof(Agendamento.Status)).HasColumnName("Status").IsRequired(true);
         }
     }

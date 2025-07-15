@@ -14,6 +14,7 @@
     <ProjectReference Include="..\ProjetoPocchiniMakeup.Aplicacao\ProjetoPocchiniMakeup.Aplicacao.csproj" />
     <ProjectReference Include="..\ProjetoPocchiniMakeup.Dominio\ProjetoPocchiniMakeup.Dominio.csproj" />
     <ProjectReference Include="..\ProjetoPocchiniMakeup.Repositorio\ProjetoPocchiniMakeup.Repositorio.csproj" />
+    <ProjectReference Include="..\ProjetoPocchiniMakeup.Servicos\ProjetoPocchiniMakeup.Servicos.csproj" />
   </ItemGroup>
 
 </Project>
