@@ -15,3 +15,20 @@ C:\Users\Tarde\Desktop\ProjConclusao\ProjetoAPI\ProjetoPocchiniMakeup\ProjetoPoc
 C:\Users\Tarde\Desktop\ProjConclusao\ProjetoAPI\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Aplicacao\obj\Debug\net6.0\refint\ProjetoPocchiniMakeup.Aplicacao.dll
 C:\Users\Tarde\Desktop\ProjConclusao\ProjetoAPI\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Aplicacao\obj\Debug\net6.0\ProjetoPocchiniMakeup.Aplicacao.pdb
 C:\Users\Tarde\Desktop\ProjConclusao\ProjetoAPI\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Aplicacao\obj\Debug\net6.0\ref\ProjetoPocchiniMakeup.Aplicacao.dll
+C:\Users\jkrou\OneDrive\Área de Trabalho\ProjetoBella\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Aplicacao\bin\Debug\net6.0\ProjetoPocchiniMakeup.Aplicacao.deps.json
+C:\Users\jkrou\OneDrive\Área de Trabalho\ProjetoBella\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Aplicacao\bin\Debug\net6.0\ProjetoPocchiniMakeup.Aplicacao.dll
+C:\Users\jkrou\OneDrive\Área de Trabalho\ProjetoBella\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Aplicacao\bin\Debug\net6.0\ProjetoPocchiniMakeup.Aplicacao.pdb
+C:\Users\jkrou\OneDrive\Área de Trabalho\ProjetoBella\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Aplicacao\bin\Debug\net6.0\ProjetoPocchiniMakeup.Dominio.dll
+C:\Users\jkrou\OneDrive\Área de Trabalho\ProjetoBella\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Aplicacao\bin\Debug\net6.0\ProjetoPocchiniMakeup.Repositorio.dll
+C:\Users\jkrou\OneDrive\Área de Trabalho\ProjetoBella\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Aplicacao\bin\Debug\net6.0\ProjetoPocchiniMakeup.Repositorio.pdb
+C:\Users\jkrou\OneDrive\Área de Trabalho\ProjetoBella\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Aplicacao\bin\Debug\net6.0\ProjetoPocchiniMakeup.Dominio.pdb
+C:\Users\jkrou\OneDrive\Área de Trabalho\ProjetoBella\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Aplicacao\obj\Debug\net6.0\ProjetoPocchiniMakeup.Aplicacao.csproj.AssemblyReference.cache
+C:\Users\jkrou\OneDrive\Área de Trabalho\ProjetoBella\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Aplicacao\obj\Debug\net6.0\ProjetoPocchiniMakeup.Aplicacao.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jkrou\OneDrive\Área de Trabalho\ProjetoBella\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Aplicacao\obj\Debug\net6.0\ProjetoPocchiniMakeup.Aplicacao.AssemblyInfoInputs.cache
+C:\Users\jkrou\OneDrive\Área de Trabalho\ProjetoBella\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Aplicacao\obj\Debug\net6.0\ProjetoPocchiniMakeup.Aplicacao.AssemblyInfo.cs
+C:\Users\jkrou\OneDrive\Área de Trabalho\ProjetoBella\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Aplicacao\obj\Debug\net6.0\ProjetoPocchiniMakeup.Aplicacao.csproj.CoreCompileInputs.cache
+C:\Users\jkrou\OneDrive\Área de Trabalho\ProjetoBella\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Aplicacao\obj\Debug\net6.0\ProjetoPocchiniMakeup.Aplicacao.csproj.CopyComplete
+C:\Users\jkrou\OneDrive\Área de Trabalho\ProjetoBella\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Aplicacao\obj\Debug\net6.0\ProjetoPocchiniMakeup.Aplicacao.dll
+C:\Users\jkrou\OneDrive\Área de Trabalho\ProjetoBella\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Aplicacao\obj\Debug\net6.0\refint\ProjetoPocchiniMakeup.Aplicacao.dll
+C:\Users\jkrou\OneDrive\Área de Trabalho\ProjetoBella\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Aplicacao\obj\Debug\net6.0\ProjetoPocchiniMakeup.Aplicacao.pdb
+C:\Users\jkrou\OneDrive\Área de Trabalho\ProjetoBella\ProjetoPocchiniMakeup\ProjetoPocchiniMakeup.Aplicacao\obj\Debug\net6.0\ref\ProjetoPocchiniMakeup.Aplicacao.dll

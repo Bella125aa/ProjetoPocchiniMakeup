@@ -1391,37 +1391,35 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Tarde\\.nuget\\packages\\": {}
+    "C:\\Users\\jkrou\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Tarde\\Desktop\\ProjConclusao\\ProjetoAPI\\ProjetoPocchiniMakeup\\ProjetoPocchiniMakeup.Servicos\\ProjetoPocchiniMakeup.Servicos.csproj",
+      "projectUniqueName": "C:\\Users\\jkrou\\OneDrive\\Área de Trabalho\\ProjetoBella\\ProjetoPocchiniMakeup\\ProjetoPocchiniMakeup.Servicos\\ProjetoPocchiniMakeup.Servicos.csproj",
       "projectName": "ProjetoPocchiniMakeup.Servicos",
-      "projectPath": "C:\\Users\\Tarde\\Desktop\\ProjConclusao\\ProjetoAPI\\ProjetoPocchiniMakeup\\ProjetoPocchiniMakeup.Servicos\\ProjetoPocchiniMakeup.Servicos.csproj",
-      "packagesPath": "C:\\Users\\Tarde\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Tarde\\Desktop\\ProjConclusao\\ProjetoAPI\\ProjetoPocchiniMakeup\\ProjetoPocchiniMakeup.Servicos\\obj\\",
+      "projectPath": "C:\\Users\\jkrou\\OneDrive\\Área de Trabalho\\ProjetoBella\\ProjetoPocchiniMakeup\\ProjetoPocchiniMakeup.Servicos\\ProjetoPocchiniMakeup.Servicos.csproj",
+      "packagesPath": "C:\\Users\\jkrou\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jkrou\\OneDrive\\Área de Trabalho\\ProjetoBella\\ProjetoPocchiniMakeup\\ProjetoPocchiniMakeup.Servicos\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Tarde\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\jkrou\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Tarde\\Desktop\\ProjConclusao\\ProjetoAPI\\ProjetoPocchiniMakeup\\ProjetoPocchiniMakeup.Aplicacao\\ProjetoPocchiniMakeup.Aplicacao.csproj": {
-              "projectPath": "C:\\Users\\Tarde\\Desktop\\ProjConclusao\\ProjetoAPI\\ProjetoPocchiniMakeup\\ProjetoPocchiniMakeup.Aplicacao\\ProjetoPocchiniMakeup.Aplicacao.csproj"
+            "C:\\Users\\jkrou\\OneDrive\\Área de Trabalho\\ProjetoBella\\ProjetoPocchiniMakeup\\ProjetoPocchiniMakeup.Aplicacao\\ProjetoPocchiniMakeup.Aplicacao.csproj": {
+              "projectPath": "C:\\Users\\jkrou\\OneDrive\\Área de Trabalho\\ProjetoBella\\ProjetoPocchiniMakeup\\ProjetoPocchiniMakeup.Aplicacao\\ProjetoPocchiniMakeup.Aplicacao.csproj"
             },
-            "C:\\Users\\Tarde\\Desktop\\ProjConclusao\\ProjetoAPI\\ProjetoPocchiniMakeup\\ProjetoPocchiniMakeup.Dominio\\ProjetoPocchiniMakeup.Dominio.csproj": {
-              "projectPath": "C:\\Users\\Tarde\\Desktop\\ProjConclusao\\ProjetoAPI\\ProjetoPocchiniMakeup\\ProjetoPocchiniMakeup.Dominio\\ProjetoPocchiniMakeup.Dominio.csproj"
+            "C:\\Users\\jkrou\\OneDrive\\Área de Trabalho\\ProjetoBella\\ProjetoPocchiniMakeup\\ProjetoPocchiniMakeup.Dominio\\ProjetoPocchiniMakeup.Dominio.csproj": {
+              "projectPath": "C:\\Users\\jkrou\\OneDrive\\Área de Trabalho\\ProjetoBella\\ProjetoPocchiniMakeup\\ProjetoPocchiniMakeup.Dominio\\ProjetoPocchiniMakeup.Dominio.csproj"
             }
           }
         }
@@ -1461,7 +1459,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.425\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.423\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,6 +1,8 @@
+using System.Security.Cryptography;
 using DataAccess.Repositorio;
 using ProjetoPocchiniMakeup.Aplicacao;
 using ProjetoPocchiniMakeup.Dominio.Entidade;
+using ProjetoPocchiniMakeup.Dominio.Enumeradores;
 
 
 namespace ProjetoPocchiniMakeup.Aplicacao
@@ -16,15 +18,31 @@ namespace ProjetoPocchiniMakeup.Aplicacao
 
         public async Task<int> CriarAsync(Usuario usuario)
         {
-            if (usuario == null)
-                throw new Exception("Usuario não pode ser vazio");
-
-            if (string.IsNullOrEmpty(usuario.Senha))
-                throw new Exception("Senha não pode ser vazio");
-
             ValidarInformacoesUsuario(usuario);
 
+            var usuarioDominio = await _usuarioRepositorio.ObterPorEmailAsync(usuario.Email);
+
+            if (usuarioDominio != null)
+                throw new Exception("Email Já Existente");
+
+            usuario.TipoUsuario = TipoUsuarioEnum.Cliente;
             return await _usuarioRepositorio.SalvarAsync(usuario);
+        }
+
+        public async Task<Usuario> Login(string email, string senha)
+        {
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(senha))
+                throw new Exception("Dados Inválidos");
+
+            var usuarioDominio = await _usuarioRepositorio.ObterPorEmailAsync(email);
+
+            if (usuarioDominio == null)
+                throw new Exception("Email Inválido");
+
+            if (usuarioDominio.Senha != senha)
+                throw new Exception("Senha Incorreta");
+
+            return usuarioDominio;
         }
 
         public async Task AtualizarAsync(Usuario usuario)
@@ -39,13 +57,13 @@ namespace ProjetoPocchiniMakeup.Aplicacao
             if (usuarioDominio.Email != usuario.Email && usuario.Email != "string")
             {
                 usuarioDominio.Email = usuario.Email;
-            }          
+            }
 
             if (usuarioDominio.Nome != usuario.Nome && usuario.Nome != "string")
             {
                 usuarioDominio.Nome = usuario.Nome;
-            }            
-            
+            }
+
             await _usuarioRepositorio.AtualizarAsync(usuarioDominio);
         }
 
@@ -121,11 +139,18 @@ namespace ProjetoPocchiniMakeup.Aplicacao
 
         private static void ValidarInformacoesUsuario(Usuario usuario)
         {
+
+            if (usuario == null)
+                throw new Exception("Usuario não pode ser vazio");
+
             if (string.IsNullOrEmpty(usuario.Email))
                 throw new Exception("E-mail não pode ser vazio");
 
             if (string.IsNullOrEmpty(usuario.Nome))
                 throw new Exception("Nome não pode ser vazio");
+
+            if (string.IsNullOrEmpty(usuario.Senha))
+                throw new Exception("Senha não pode ser vazio");
         }
 
         #endregion

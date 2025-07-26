@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Tarde\\Desktop\\ProjConclusao\\ProjetoAPI\\ProjetoPocchiniMakeup\\ProjetoPocchiniMakeup.Dominio\\ProjetoPocchiniMakeup.Dominio.csproj": {}
+    "C:\\Users\\jkrou\\OneDrive\\Área de Trabalho\\ProjetoBella\\ProjetoPocchiniMakeup\\ProjetoPocchiniMakeup.Dominio\\ProjetoPocchiniMakeup.Dominio.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Tarde\\Desktop\\ProjConclusao\\ProjetoAPI\\ProjetoPocchiniMakeup\\ProjetoPocchiniMakeup.Dominio\\ProjetoPocchiniMakeup.Dominio.csproj": {
+    "C:\\Users\\jkrou\\OneDrive\\Área de Trabalho\\ProjetoBella\\ProjetoPocchiniMakeup\\ProjetoPocchiniMakeup.Dominio\\ProjetoPocchiniMakeup.Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tarde\\Desktop\\ProjConclusao\\ProjetoAPI\\ProjetoPocchiniMakeup\\ProjetoPocchiniMakeup.Dominio\\ProjetoPocchiniMakeup.Dominio.csproj",
+        "projectUniqueName": "C:\\Users\\jkrou\\OneDrive\\Área de Trabalho\\ProjetoBella\\ProjetoPocchiniMakeup\\ProjetoPocchiniMakeup.Dominio\\ProjetoPocchiniMakeup.Dominio.csproj",
         "projectName": "ProjetoPocchiniMakeup.Dominio",
-        "projectPath": "C:\\Users\\Tarde\\Desktop\\ProjConclusao\\ProjetoAPI\\ProjetoPocchiniMakeup\\ProjetoPocchiniMakeup.Dominio\\ProjetoPocchiniMakeup.Dominio.csproj",
-        "packagesPath": "C:\\Users\\Tarde\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tarde\\Desktop\\ProjConclusao\\ProjetoAPI\\ProjetoPocchiniMakeup\\ProjetoPocchiniMakeup.Dominio\\obj\\",
+        "projectPath": "C:\\Users\\jkrou\\OneDrive\\Área de Trabalho\\ProjetoBella\\ProjetoPocchiniMakeup\\ProjetoPocchiniMakeup.Dominio\\ProjetoPocchiniMakeup.Dominio.csproj",
+        "packagesPath": "C:\\Users\\jkrou\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jkrou\\OneDrive\\Área de Trabalho\\ProjetoBella\\ProjetoPocchiniMakeup\\ProjetoPocchiniMakeup.Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Tarde\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\jkrou\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -55,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.425\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.423\\RuntimeIdentifierGraph.json"
         }
       }
     }
