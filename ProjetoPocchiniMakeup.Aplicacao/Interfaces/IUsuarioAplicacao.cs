@@ -10,6 +10,7 @@ namespace ProjetoPocchiniMakeup.Aplicacao
         Task DeletarAsync(int usuarioId);
         Task RestaurarAsync(int usuarioId);
         Task <IEnumerable<Usuario>> ListarAsync(bool ativo);
+        Task<Usuario> Login(string email, string senha);
         Task<Usuario> ObterAsync(int usuarioId);
         Task<Usuario> ObterPorEmailAsync(string email);
     }

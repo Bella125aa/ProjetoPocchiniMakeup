@@ -28,7 +28,7 @@ public class ProjetoPocchiniMakeupContexto : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         if (_options == null)
-            optionsBuilder.UseSqlite(@"Filename=../projetoPocchiniMakeup.sqlite;");
+            optionsBuilder.UseSqlite(@"Filename=../ProjetoPocchiniMakeup.Repositorio\projetoPocchiniMakeup.sqlite;");
     }
 
     /// <summary>

@@ -19,7 +19,6 @@ namespace ProjetoPocchiniMakeup.Api
             _usuarioAplicacao = usuarioAplicacao;
         }
 
-
         [HttpGet]
         [Route("Obter/{usuarioId}")]
         public async Task<ActionResult> Obter([FromRoute] int usuarioId)
@@ -28,13 +27,13 @@ namespace ProjetoPocchiniMakeup.Api
             {
                 var usuarioDominio = await _usuarioAplicacao.ObterAsync(usuarioId);
 
-                var UsuarioResposta = new UsuarioResposta()
+                var usuarioResposta = new UsuarioResposta()
                 {
                     Id = usuarioDominio.UsuarioId,
                     Nome = usuarioDominio.Nome,
                     Email = usuarioDominio.Email,
                 };
-                return Ok(UsuarioResposta);
+                return Ok(usuarioResposta);
             }
             catch (Exception ex)
             {
@@ -42,6 +41,27 @@ namespace ProjetoPocchiniMakeup.Api
             }
         }
 
+        [HttpPost]
+        [Route("Login")]
+        public async Task<ActionResult> Login([FromBody] UsuarioLogar usuarioLogar)
+        {
+            try
+            {
+                var usuarioLogado = await _usuarioAplicacao.Login(usuarioLogar.Email, usuarioLogar.Senha);
+
+                var usuarioResposta = new UsuarioResposta()
+                {
+                    Id = usuarioLogado.UsuarioId,
+                    Nome = usuarioLogado.Nome,
+                    Email = usuarioLogado.Email,
+                };
+                return Ok(usuarioResposta);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
 
         [HttpPost]
         [Route("Criar")]
