@@ -1,0 +1,113 @@
+###############
+## Build ##
+###############
+
+# Build output
+bin/
+obj/
+[Bb]uild/
+[Ll]ogs/
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+*.swp
+
+# Rider
+.idea/
+
+# VS Code
+.vscode/
+.history/
+
+# VS for Mac
+*.userprefs
+
+###############
+## NuGet ##
+###############
+
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+*.nuspec
+*.psmdcp
+
+# Backup & temp files
+*~ 
+*.tmp
+*.bak
+*.old
+*.orig
+
+# Entity Framework
+Migrations/*Designer.cs
+Migrations/*Snapshot.cs
+Migrations/*ModelSnapshot.cs
+
+# Publish output
+.publish/
+*.Publish.xml
+
+###############
+## Test ##
+###############
+
+TestResults/
+*.testresult
+*.trx
+coverage/
+*.coverage
+*.coveragexml
+.ncrunch*
+*.nunit.xml
+*.VisualState.xml
+
+###############
+## Logs ##
+###############
+
+*.log
+
+###############
+## OS Files ##
+###############
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+
+# Linux
+*~
+
+###############
+## Others ##
+###############
+
+# Secrets
+secrets.json
+
+# JetBrains Rider caches
+.idea/
+
+# Ignore ReSharper files
+*.DotSettings.user
+
+# Ignore Docker
+**/.dockerignore
+docker-compose.override.yml
+
+# Ignore temporary local config
+appsettings.*.local.json
