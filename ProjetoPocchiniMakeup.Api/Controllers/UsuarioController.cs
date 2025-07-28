@@ -4,6 +4,7 @@ using ProjetoPocchiniMakeup.Api.Models.Requisicao;
 using ProjetoPocchiniMakeup.Api.Models.Resposta;
 using ProjetoPocchiniMakeup.Aplicacao;
 using System.Threading.Tasks;
+using ProjetoPocchiniMakeup.Dominio.Enumeradores;
 
 namespace ProjetoPocchiniMakeup.Api
 {
@@ -32,6 +33,7 @@ namespace ProjetoPocchiniMakeup.Api
                     Id = usuarioDominio.UsuarioId,
                     Nome = usuarioDominio.Nome,
                     Email = usuarioDominio.Email,
+                    TipoUsuario = usuarioDominio.TipoUsuario,
                 };
                 return Ok(usuarioResposta);
             }
@@ -47,7 +49,9 @@ namespace ProjetoPocchiniMakeup.Api
         {
             try
             {
-                var usuarioLogado = await _usuarioAplicacao.Login(usuarioLogar.Email, usuarioLogar.Senha);
+                var ehADM = usuarioLogar.EhAdmin ?? false;
+
+                var usuarioLogado = await _usuarioAplicacao.Login(ehADM, usuarioLogar.Email, usuarioLogar.Senha);
 
                 var usuarioResposta = new UsuarioResposta()
                 {
@@ -65,7 +69,7 @@ namespace ProjetoPocchiniMakeup.Api
 
         [HttpPost]
         [Route("Criar")]
-        public ActionResult Criar([FromBody] UsuarioCriar usuarioCriar)
+        public async Task<ActionResult> Criar([FromBody] UsuarioCriar usuarioCriar)
         {
             try
             {
@@ -73,10 +77,11 @@ namespace ProjetoPocchiniMakeup.Api
                 {
                     Nome = usuarioCriar.Nome,
                     Email = usuarioCriar.Email,
-                    Senha = usuarioCriar.Senha
+                    Senha = usuarioCriar.Senha,
+                    TipoUsuario = usuarioCriar.TipoUsuario ?? TipoUsuarioEnum.Cliente
                 };
 
-                var usuarioID = _usuarioAplicacao.CriarAsync(usuarioDominio);
+                var usuarioID = await _usuarioAplicacao.CriarAsync(usuarioDominio);
 
 
                 return Ok(usuarioID);
@@ -88,7 +93,6 @@ namespace ProjetoPocchiniMakeup.Api
             }
 
         }
-
 
         [HttpPut]
         [Route("Atualizar")]
@@ -112,10 +116,9 @@ namespace ProjetoPocchiniMakeup.Api
             }
         }
 
-
         [HttpPut]
         [Route("AlterarSenha")]
-        public ActionResult AlterarSenha([FromBody] UsuarioAlterarSenha usuario)
+        public async Task<ActionResult> AlterarSenha([FromBody] UsuarioAlterarSenha usuario)
         {
             try
             {
@@ -125,7 +128,7 @@ namespace ProjetoPocchiniMakeup.Api
                     Senha = usuario.Senha
                 };
 
-                _usuarioAplicacao.AlterarSenhaAsync(usuarioDominio, usuario.SenhaAntiga);
+                await _usuarioAplicacao.AlterarSenhaAsync(usuarioDominio, usuario.SenhaAntiga);
 
                 return Ok();
             }
@@ -137,11 +140,11 @@ namespace ProjetoPocchiniMakeup.Api
 
         [HttpDelete]
         [Route("Deletar/{usuarioId}")]
-        public ActionResult Deletar([FromRoute] int usuarioId)
+        public async Task<ActionResult> DeletarAsync([FromRoute] int usuarioId)
         {
             try
             {
-                _usuarioAplicacao.DeletarAsync(usuarioId);
+                await _usuarioAplicacao.DeletarAsync(usuarioId);
 
                 return Ok();
             }
@@ -150,13 +153,14 @@ namespace ProjetoPocchiniMakeup.Api
                 return BadRequest(ex.Message);
             }
         }
+
         [HttpPut]
         [Route("Restaurar/{usuarioId}")]
-        public ActionResult Restaurar([FromRoute] int usuarioId)
+        public async Task<ActionResult>  RestaurarAsync([FromRoute] int usuarioId)
         {
             try
             {
-                _usuarioAplicacao.RestaurarAsync(usuarioId);
+                await _usuarioAplicacao.RestaurarAsync(usuarioId);
 
                 return Ok();
             }
@@ -168,7 +172,7 @@ namespace ProjetoPocchiniMakeup.Api
 
         [HttpGet]
         [Route("Listar")]
-        public async Task<ActionResult> Listar([FromQuery] bool ativos)
+        public async Task<ActionResult> ListarAsync([FromQuery] bool ativos)
         {
             try
             {
@@ -178,7 +182,9 @@ namespace ProjetoPocchiniMakeup.Api
                 {
                     Id = usuario.UsuarioId,
                     Nome = usuario.Nome,
-                    Email = usuario.Email
+                    Email = usuario.Email,
+                    TipoUsuario = usuario.TipoUsuario
+                    
                 }).ToList();
 
                 return Ok(usuarios);
@@ -188,8 +194,6 @@ namespace ProjetoPocchiniMakeup.Api
                 return BadRequest(ex.Message);
             }
         }
-
-
 
     }
 

@@ -1,3 +1,4 @@
+using Domain.Entidade;
 using ProjetoPocchiniMakeup.Dominio.Enumeradores;
 
 namespace ProjetoPocchiniMakeup.Dominio.Entidade
@@ -10,6 +11,7 @@ namespace ProjetoPocchiniMakeup.Dominio.Entidade
         public string Senha { get; set; }
         public bool Ativo { get; set; }
         public TipoUsuarioEnum TipoUsuario { get; set; }
+        public List<Agendamento> Agendamentos { get; set; }
 
         public Usuario()
         {

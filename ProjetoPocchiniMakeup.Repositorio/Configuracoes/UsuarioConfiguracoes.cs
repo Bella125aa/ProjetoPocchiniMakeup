@@ -15,6 +15,10 @@ namespace ProjetoPocchiniMakeup.Repositorio.Configuracoes
             builder.Property(nameof(Usuario.Email)).HasColumnName("Email").IsRequired(true);
             builder.Property(nameof(Usuario.Senha)).HasColumnName("Senha").IsRequired(true);
             builder.Property(nameof(Usuario.Ativo)).HasColumnName("Ativo").IsRequired(true);
+
+            builder.HasMany(u => u.Agendamentos)
+                   .WithOne(a => a.Usuario)
+                   .HasForeignKey("UsuarioId");
         }
     }
 }

@@ -8,8 +8,9 @@ namespace ProjetoPocchiniMakeup.Aplicacao
     {
         Task<int> CriarAsync(Agendamento agendamentoDTO);
         Task AtualizarAsync(Agendamento agendamentoDTO);
-        Task<IEnumerable<Agendamento>> ListarAsync(StatusAgendamento ativo);
-        Task<IEnumerable<Agendamento>> ListarAsync();
+        Task<IEnumerable<Agendamento>> ListarPorStatusAsync(StatusAgendamento ativo);
+        Task<IEnumerable<Agendamento>> ListarPorUsuarioAsync(int usuarioId, StatusAgendamento ativo);
+        Task<IEnumerable<Agendamento>> ListarTodosAsync();
         Task<Agendamento> ObterAsync(int agendamentoId);
     }
 }

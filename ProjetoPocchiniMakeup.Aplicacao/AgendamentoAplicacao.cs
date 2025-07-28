@@ -64,14 +64,17 @@ namespace ProjetoPocchiniMakeup.Aplicacao
             return agendamentoDominio;
         }
 
-        public async Task<IEnumerable<Agendamento>> ListarAsync(StatusAgendamento status)
+        public async Task<IEnumerable<Agendamento>> ListarPorStatusAsync(StatusAgendamento status)
         {
-            return await _agendamentoRepositorio.ListarAsync(status);
+            return await _agendamentoRepositorio.ListarPorStatusAsync(status);
         }
-
-        public async Task<IEnumerable<Agendamento>> ListarAsync()
+        public async Task<IEnumerable<Agendamento>> ListarPorUsuarioAsync(int usuarioId, StatusAgendamento status)
         {
-            return await _agendamentoRepositorio.ListarAsync();
+            return await _agendamentoRepositorio.ListarPorUsuarioAsync(usuarioId, status);
+        }
+        public async Task<IEnumerable<Agendamento>> ListarTodosAsync()
+        {
+            return await _agendamentoRepositorio.ListarTodosAsync();
         }
 
     }

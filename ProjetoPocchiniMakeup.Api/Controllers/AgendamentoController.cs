@@ -60,6 +60,7 @@ namespace ProjetoPocchiniMakeup.Api
                     Telefone = agendamentoCriar.Telefone,
                     TipoMaquiagem = agendamentoCriar.TipoMaquiagem,
                     Local = agendamentoCriar.Local,
+                    UsuarioId = agendamentoCriar.UsuarioId,
 
                 };
 
@@ -77,11 +78,11 @@ namespace ProjetoPocchiniMakeup.Api
         }
         [HttpGet]
         [Route("ListarPorStatus")]
-        public async Task<ActionResult> ListarAsync([FromQuery] StatusAgendamento status)
+        public async Task<ActionResult> ListarPorStatusAsync([FromQuery] StatusAgendamento status)
         {
             try
             {
-                var agendamentosDominio = await _agendamentoAplicacao.ListarAsync(status);
+                var agendamentosDominio = await _agendamentoAplicacao.ListarPorStatusAsync(status);
 
                 var agendamentos = agendamentosDominio.Select(agendamento => new AgendamentoResposta()
                 {
@@ -110,7 +111,36 @@ namespace ProjetoPocchiniMakeup.Api
         {
             try
             {
-                var agendamentosDominio = await _agendamentoAplicacao.ListarAsync();
+                var agendamentosDominio = await _agendamentoAplicacao.ListarTodosAsync();
+
+                var agendamentos = agendamentosDominio.Select(agendamento => new AgendamentoResposta()
+                {
+                    Id = agendamento.Id,
+                    DataHora = agendamento.DataHora,
+                    TipoMaquiagem = agendamento.TipoMaquiagem,
+                    Nome = agendamento.Nome,
+                    Status = agendamento.Status.ToString(),
+                    Local = agendamento.Local,
+                    Telefone = agendamento.Telefone,
+                    Email = agendamento.Email,
+
+                });
+
+                return Ok(agendamentos);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet]
+        [Route("ListarPorUsuario")]
+        public async Task<ActionResult> ListarPorUsuarioAsync([FromQuery] int usuarioId, [FromQuery] StatusAgendamento status)
+        {
+            try
+            {
+                var agendamentosDominio = await _agendamentoAplicacao.ListarPorUsuarioAsync(usuarioId, status);
 
                 var agendamentos = agendamentosDominio.Select(agendamento => new AgendamentoResposta()
                 {

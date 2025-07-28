@@ -7,7 +7,8 @@ public interface IAgendamentoRepositorio
     Task AtualizarAsync(Agendamento agendamento);
     Task<Agendamento> ObterAsync(int agendamentoId);
     Task<List<Agendamento>> ObterAgendamentosPorDataAsync(DateTime data);
-    Task<IEnumerable<Agendamento>> ListarAsync(StatusAgendamento ativo);
-    Task<IEnumerable<Agendamento>> ListarAsync();
+    Task<IEnumerable<Agendamento>> ListarPorStatusAsync(StatusAgendamento ativo);
+    Task<IEnumerable<Agendamento>> ListarPorUsuarioAsync(int usuarioId, StatusAgendamento status);
+    Task<IEnumerable<Agendamento>> ListarTodosAsync();
 }
 

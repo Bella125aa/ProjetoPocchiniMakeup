@@ -25,11 +25,10 @@ namespace ProjetoPocchiniMakeup.Aplicacao
             if (usuarioDominio != null)
                 throw new Exception("Email Já Existente");
 
-            usuario.TipoUsuario = TipoUsuarioEnum.Cliente;
             return await _usuarioRepositorio.SalvarAsync(usuario);
         }
 
-        public async Task<Usuario> Login(string email, string senha)
+        public async Task<Usuario> Login(bool ehAdm, string email, string senha)
         {
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(senha))
                 throw new Exception("Dados Inválidos");
@@ -41,6 +40,12 @@ namespace ProjetoPocchiniMakeup.Aplicacao
 
             if (usuarioDominio.Senha != senha)
                 throw new Exception("Senha Incorreta");
+
+            if (!ehAdm && usuarioDominio.TipoUsuario == TipoUsuarioEnum.ADM)
+                throw new Exception("Acesso Negado");
+
+            if (ehAdm && usuarioDominio.TipoUsuario != TipoUsuarioEnum.ADM)
+                throw new Exception("Esse Usuário não é um Administrador");
 
             return usuarioDominio;
         }

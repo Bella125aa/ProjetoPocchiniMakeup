@@ -15,10 +15,10 @@ namespace DataAccess.Repositorio
         public async Task<int> SalvarAsync(Agendamento agendamento)
         {
 
-                await _contexto.Agendamento.AddAsync(agendamento);
-                await _contexto.SaveChangesAsync();
+            await _contexto.Agendamento.AddAsync(agendamento);
+            await _contexto.SaveChangesAsync();
 
-                return agendamento.Id;
+            return agendamento.Id;
         }
 
         public async Task AtualizarAsync(Agendamento agendamento)
@@ -49,12 +49,17 @@ namespace DataAccess.Repositorio
             .ToListAsync();
         }
 
-        public async Task<IEnumerable<Agendamento>> ListarAsync(StatusAgendamento status)
+        public async Task<IEnumerable<Agendamento>> ListarPorStatusAsync(StatusAgendamento status)
         {
             return await _contexto.Agendamento.Where(a => a.Status == status).ToListAsync();
         }
 
-        public async Task<IEnumerable<Agendamento>> ListarAsync()
+        public async Task<IEnumerable<Agendamento>> ListarPorUsuarioAsync(int usuarioId, StatusAgendamento status)
+        {
+            return await _contexto.Agendamento.Where(a => a.UsuarioId == usuarioId && a.Status == status).ToListAsync();
+        }
+
+        public async Task<IEnumerable<Agendamento>> ListarTodosAsync()
         {
             return await _contexto.Agendamento.Where(a => a.Status == StatusAgendamento.Marcado).ToListAsync();
         }

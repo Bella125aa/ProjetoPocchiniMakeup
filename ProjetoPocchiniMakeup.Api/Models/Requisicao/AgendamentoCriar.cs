@@ -10,6 +10,7 @@ namespace ProjetoPocchiniMakeup.Api.Models.Requisicao
         public string Telefone { get; set; }
         public string TipoMaquiagem { get; set; }
         public string Local { get; set; }
+        public int UsuarioId { get; set; }
 
     }
 }

@@ -13,7 +13,7 @@ namespace DataAccess.Repositorio
         public async Task<int> SalvarAsync(Usuario usuario)
         {
             await _contexto.Usuarios.AddAsync(usuario);
-            _contexto.SaveChanges();
+            await _contexto.SaveChangesAsync();
 
             return usuario.UsuarioId;
         }

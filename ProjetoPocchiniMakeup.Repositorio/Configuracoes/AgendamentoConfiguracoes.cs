@@ -20,6 +20,16 @@ namespace ProjetoPocchiniMakeup.Repositorio.Configuracoes
             builder.Property(nameof(Agendamento.DataHora)).HasColumnName("DataHora").IsRequired(true);
             builder.Property(nameof(Agendamento.Local)).HasColumnName("Local").IsRequired(true);
             builder.Property(nameof(Agendamento.Status)).HasColumnName("Status").IsRequired(true);
-        }
+
+            builder.Property<int>("UsuarioId")
+                    .HasColumnName("UsuarioId")
+                    .IsRequired();
+
+            builder.HasOne(a => a.Usuario)
+                    .WithMany(u => u.Agendamentos)
+                    .HasForeignKey("UsuarioId")
+                    .OnDelete(DeleteBehavior.Cascade);                  
+
+        }    
     }
 }
