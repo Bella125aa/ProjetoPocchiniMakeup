@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ProjetoPocchiniMakeup.Servicos.Interfaces;
 [ApiController]
-[Route("api/[controller]")]
+[Route("[controller]")]
 public class AiController : ControllerBase
 {
 private readonly IAiService _aiService;

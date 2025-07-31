@@ -1,48 +1,51 @@
-using System.Net.Http.Headers;
-using System.Text;
-using System.Text.Json;
 using Microsoft.Extensions.Configuration;
+using OpenAI;
+using OpenAI.Chat;
+using System.ClientModel;
 using ProjetoPocchiniMakeup.Servicos.Interfaces;
 
 public class AiService : IAiService
 {
-    private readonly HttpClient _httpClient;
-    private readonly IConfiguration _config;
+    private readonly ChatClient _chatClient;
+
     public AiService(IConfiguration config)
     {
-        _httpClient = new HttpClient();
-        _config = config;
+        var credential = config["GitHubModels:Token"];
+        var endpoint = config["GitHubModels:ApiUrl"] ?? "https://models.github.ai/inference";
+        var model = config["GitHubModels:Model"] ?? "openai/gpt-4o-mini";
+
+
+
+        var options = new OpenAIClientOptions()
+        {
+            Endpoint = new Uri(endpoint)
+        };
+
+        _chatClient = new ChatClient(model, new ApiKeyCredential(credential), options);
     }
+
     public async Task<string> GetAiResponseAsync(string prompt)
     {
-        var url = _config["GitHubModels:ApiUrl"];
-        var token = _config["GitHubModels:Token"];
-        _httpClient.DefaultRequestHeaders.Authorization =
-        new AuthenticationHeaderValue("Bearer", token);
-        _httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("ProjetoPocchiniMakeup");
-
-        var requestBody = new
+        var messages = new List<ChatMessage>
         {
-            model = "mistralai/mistral-7b-instruct",
-            messages = new[]
-            {
-                new { role = "user", content = prompt }
-            },
-            mar_tokens = 100
+           new SystemChatMessage("Você é uma assistente especializada apenas em maquiagem formal, casual, maquiagem de noiva, tons de pele e colorimetria. Recuse gentilmente qualquer pergunta fora desse escopo."),
+           new UserChatMessage(prompt)
         };
-        var content = new StringContent(
-        JsonSerializer.Serialize(requestBody),
-        Encoding.UTF8,
-        "application/json"
-        );
 
-        var response = await _httpClient.PostAsync(url, content);
-        if (!response.IsSuccessStatusCode)
+        var requestOptions = new ChatCompletionOptions
         {
-            var error = await response.Content.ReadAsStringAsync();
-            return $"Erro: {response.StatusCode} - {error}";
+            Temperature = 0.7f,
+            MaxOutputTokenCount = 1024
+        };
+
+        try
+        {
+            var response = await _chatClient.CompleteChatAsync(messages, requestOptions);
+            return response.Value.Content[0].Text;
         }
-        var result = await response.Content.ReadAsStringAsync();
-        return result;
+        catch (Exception ex)
+        {
+            return $"Erro ao obter resposta da IA: {ex.Message}";
+        }
     }
 }
